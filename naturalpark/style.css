@@ -22,7 +22,7 @@ hr {
 }
 
 picture {
-    display: none;
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
@@ -41,9 +41,9 @@ img:hover {
     transform: rotate(10deg);
 }
 
-#show:hover{
+#hide:hover{
     picture {
-        display: flex;
+        display: none;
         transition: 10s;
     }
 }
