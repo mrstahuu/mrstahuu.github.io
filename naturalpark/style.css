@@ -32,4 +32,9 @@ img {
     height: 300px;
     max-width: 300px;
     max-height: 300px;
+    border-radius: 10px;
+}
+
+img:hover {
+    transform: rotate(10deg);
 }
