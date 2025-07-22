@@ -44,6 +44,5 @@ img:hover {
 #hide:hover{
     picture {
         display: none;
-        transition: 10s;
     }
 }
