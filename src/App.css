@@ -43,3 +43,30 @@
 .read-the-docs {
   color: #888;
 }
+
+#news_cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+#news_header {
+  width: 100%;
+}
+
+.card {
+  width: 32%; /* 3 w rzędzie z gapem */
+  border: 1px solid #888;
+  border-radius: 20px;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+/* 📱 Media query dla ekranów o szerokości 768px i mniejszych */
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* 1 kolumna na telefonie */
+  }
+}
