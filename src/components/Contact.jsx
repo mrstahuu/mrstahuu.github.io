@@ -2,6 +2,7 @@ import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline
 
 export default function ContactSection() {
   return (
+    <>
     <section className="bg-[#0e1525] text-white p-8 rounded-lg w-7xl self-center">
       <div className="grid md:grid-cols-2 gap-8">
         {/* LEFT PANEL */}
@@ -88,5 +89,6 @@ export default function ContactSection() {
         </form>
       </div>
     </section>
+    </>
   );
 }

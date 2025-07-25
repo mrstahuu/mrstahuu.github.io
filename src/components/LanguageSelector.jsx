@@ -4,6 +4,7 @@ import "/node_modules/flag-icons/css/flag-icons.min.css"
 
 export default function Example() {
   return (
+    <>
     <Menu as="div" className="relative inline-block mx-3">
       <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-white shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-stone-600">
   <span className={`fi fi-gb`} /> English
@@ -26,5 +27,6 @@ export default function Example() {
         </div>
       </MenuItems>
     </Menu>
+    </>
   )
 }
