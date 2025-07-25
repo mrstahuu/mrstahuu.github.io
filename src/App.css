@@ -1,73 +1,14 @@
 @import "tailwindcss";
-#root {
+/* #root {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   padding: 2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 
-.image {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.image:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.image.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes image-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .image {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-#news_cont {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: space-between;
-}
-
-#news_header {
+#root {
   width: 100%;
-}
-
-.card {
-  width: 32%; /* 3 w rzędzie z gapem */
-  border: 1px solid #888;
-  border-radius: 20px;
-  padding: 1em;
-  box-sizing: border-box;
-}
-
-/* 📱 Media query dla ekranów o szerokości 768px i mniejszych */
-@media (max-width: 768px) {
-  .card {
-    width: 100%; /* 1 kolumna na telefonie */
-  }
 }
