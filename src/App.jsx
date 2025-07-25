@@ -1,15 +1,7 @@
 import { useState, useEffect } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
- // const [count, setCount] = useState(0);
-
-
-  let rand = Math.floor(Math.random() * 10000) + 1;
-
-  function News() {
+function News() {
   const [newsItems, setNewsItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,9 +9,7 @@ function App() {
   useEffect(() => {
     fetch('https://api.maventplan.pl/nationalpark/news_api')
       .then(response => {
-        if (!response.ok) {
-          throw new Error('Błąd sieci: ' + response.status);
-        }
+        if (!response.ok) throw new Error('Błąd sieci: ' + response.status);
         return response.json();
       })
       .then(data => {
@@ -32,11 +22,13 @@ function App() {
       });
   }, []);
 
-  if (loading) return <p>Ładowanie wiadomości...</p>;
+  if (loading) return <p>Ładowanie aktualności...</p>;
   if (error) return <p>Błąd: {error}</p>;
 
   return (
-    <>
+    <section className="news">
+      <h2>Aktualności</h2>
+      <hr />
       {newsItems.map((item, index) => (
         <article className="card" key={index}>
           <div className="card-title">
@@ -46,75 +38,69 @@ function App() {
             <p>{item.content}</p>
           </div>
           <div className="card-footer">
-            <a href={item.url}>Read more...</a>
+            <a href={item.url}>Czytaj więcej...</a>
           </div>
         </article>
       ))}
+    </section>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <header>
+        <h1>Portfolio – Jan Kowalski</h1>
+        <p>Frontend Developer • React • UI/UX</p>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="#about">O mnie</a></li>
+          <li><a href="#projects">Projekty</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section id="about">
+          <h2>O mnie</h2>
+          <p>
+            Cześć! Jestem Jan, frontend developer specjalizujący się w technologiach React, Vite, Tailwind CSS. Tworzę nowoczesne i responsywne interfejsy użytkownika z naciskiem na dostępność i wydajność.
+          </p>
+        </section>
+
+        <section id="projects">
+          <h2>Wybrane projekty</h2>
+          <div className="card">
+            <h3>🛒 Sklep internetowy</h3>
+            <p>Aplikacja e-commerce z płatnościami Stripe, React Router i integracją z REST API.</p>
+          </div>
+          <div className="card">
+            <h3>📸 Galeria zdjęć</h3>
+            <p>Dynamiczna galeria z podglądem zdjęć, filtrowaniem i lazy loadingiem.</p>
+          </div>
+          <div className="card">
+            <h3>📅 Kalendarz zadań</h3>
+            <p>Planer zadań z lokalnym przechowywaniem danych i przypomnieniami.</p>
+          </div>
+        </section>
+
+        <News />
+
+        <section id="contact">
+          <h2>Kontakt</h2>
+          <p>📧 Email: jan.kowalski@example.com</p>
+          <p>🌐 GitHub: <a href="https://github.com/jankowalski">github.com/jankowalski</a></p>
+          <p>💼 LinkedIn: <a href="https://linkedin.com/in/jankowalski">linkedin.com/in/jankowalski</a></p>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Jan Kowalski. Wszystkie prawa zastrzeżone.</p>
+      </footer>
     </>
   );
 }
 
-  return (
-    <>
-      {/* <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src="images.jpg" className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>*/}
-       <header>
-        <h1>Parque Natural Sierra Bicuerca</h1>
-    </header> 
-
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="species.html">Species</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <h2>Bienvenidos al Parque Natural</h2>
-        <img src="images.jpg" className="image react" alt="React image" />
-        <img src="park-narodowy-teide2.jpg" className="image" alt="React image" />
-        <hr/>
-
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum cursus mi eget nisi accumsan tristique. Aliquam mattis nibh et diam pharetra dignissim. Vivamus quis vehicula nibh. Mauris augue erat, rutrum ut dolor quis, laoreet commodo tellus. Cras vel vehicula metus.  
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum cursus mi eget nisi accumsan tristique. Aliquam mattis nibh et diam pharetra dignissim. Vivamus quis vehicula nibh. Mauris augue erat, rutrum ut dolor quis, laoreet commodo tellus. Cras vel vehicula metus.  
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum cursus mi eget nisi accumsan tristique. Aliquam mattis nibh et diam pharetra dignissim. Vivamus quis vehicula nibh. Mauris augue erat, rutrum ut dolor quis, laoreet commodo tellus. Cras vel vehicula metus.  
-        </p>
-        <h2 id="news_header">News</h2>
-          <hr/>
-        <section id="news_cont">
-          
-          <News />
-        </section>
-    </main>
-    <footer>
-      <h3>Number of visits: {rand}</h3>
-    </footer>
-    </>
-  )
-}
-
-export default App
+export default App;
