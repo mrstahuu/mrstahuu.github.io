@@ -56,12 +56,16 @@ const Banner = ({
 
       {/* Obrazek "floating" nachodzący niżej */}
       <div className="relative z-10 max-w-6xl mx-auto -mt-32 shadow-xl rounded-xl overflow-hidden">
-        <img
-          src='park-narodowy-teide2.jpg'
-          alt="Floating preview"
-          className="w-full h-auto rounded-xl"
-        />
-      </div>
+  <img
+    src="SzybkiSzofer-1920-980.png"
+    alt="Floating preview"
+    className="w-full h-auto rounded-t-xl"
+  />
+  <div className="bg-slate-900 backdrop-blur-sm text-center text-sm text-gray-400 py-3 px-4">
+    My flagship project - SzybkiSzofer. Dynamic public transport planner, dedicated to city of Szczecin, Poland.
+  </div>
+</div>
+
     </>
   );
 };

@@ -6,6 +6,7 @@ import Banner from './components/Banner.jsx';
 import Footer from './components/Footer.jsx';
 import ContactSection from './components/home/Contact.jsx';
 import SkillsSection from './components/home/Skills.jsx';
+import AboutMe from './components/home/AboutMe.jsx';
 
 function News() {
   const [newsItems, setNewsItems] = useState([]);
@@ -115,7 +116,9 @@ function App() {
         secondaryButtonText="Learn more"
         secondaryButtonHref="#skills"
       />
-     
+      <section id="about_me">
+        <AboutMe />
+      </section>
       <section id="skills">
         <SkillsSection />
       </section>
