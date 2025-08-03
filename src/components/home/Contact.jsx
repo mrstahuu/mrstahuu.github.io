@@ -33,7 +33,7 @@ export default function ContactSection() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/portfolio/contact', {
+      const response = await axios.post('https://api.maventplan.pl/portfolio/contact', {
         name,
         surname,
         email,
@@ -48,7 +48,7 @@ export default function ContactSection() {
       setTurnstileToken(null); // reset token po wysłaniu
     } catch (error) {
       console.error(error);
-      setStatus('Coś poszło nie tak, spróbuj ponownie.');
+      setStatus('Something went wrong.');
     }
   };
 
