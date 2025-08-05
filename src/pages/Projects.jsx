@@ -1,33 +1,26 @@
-const Banner = ({
-  title,
-  description,
-  primaryButtonText,
-  primaryButtonHref,
-  secondaryButtonText,
-  secondaryButtonHref,
-  backgroundImageUrl,
-  floatingImageUrl,
-}) => {
+import ContactSection from '../components/home/Contact.jsx';
+import MyProjects from '../components/MyProjects.jsx';
+
+function Projects() {
   return (
     <>
-      {/* Główna sekcja z tłem */}
-      <section
+            <section
         className="bg-center bg-no-repeat bg-gray-700 bg-blend-multiply"
-        style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+        style={{ backgroundImage: "url('/cloud-computing.jpg')"}}
       >
         <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
           <h1 className="mb-4 text-4xl font-extrabold leading-none text-white md:text-5xl lg:text-6xl">
-            {title}
+            Stanisław Maik
           </h1>
           <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
-            {description}
+            My Projects
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
             <a
-              href={primaryButtonHref}
+              href="#contact"
               className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
             >
-              {primaryButtonText}
+              Contact
               <svg
                 className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                 aria-hidden="true"
@@ -45,29 +38,24 @@ const Banner = ({
               </svg>
             </a>
             <a
-              href={secondaryButtonHref}
+              href="#my_projects"
               className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
             >
-              {secondaryButtonText}
+              See projects
             </a>
           </div>
         </div>
       </section>
 
-      {/* Obrazek "floating" nachodzący niżej */}
-<div className="relative z-10 max-w-6xl mx-5 xl:mx-auto lg:ms-10 -mt-32 shadow-xl rounded-xl overflow-hidden">
-  <img
-    src="SzybkiSzofer-1920-980.png"
-    alt="Floating preview"
-    className="w-full h-auto rounded-t-xl pt-30 md:p-0"
-  />
-  <div className="bg-slate-900 backdrop-blur-sm text-center text-sm text-gray-400 py-3 px-4">
-    My flagship project - SzybkiSzofer. Dynamic public transport planner, dedicated to city of Szczecin, Poland.
-  </div>
-</div>
+     <section id="my_projects" className="flex justify-center my-5">
+      <MyProjects />
+     </section>
 
+      <section id="contact" className="flex justify-center my-5">
+        <ContactSection />
+      </section>
     </>
   );
-};
+}
 
-export default Banner;
+export default Projects;
