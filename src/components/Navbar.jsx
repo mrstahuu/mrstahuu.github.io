@@ -11,12 +11,13 @@ export default function Navbar() {
     { name: 'Home', href: '/', isRoute: true },
     ...(isHomePage
       ? [
-          { name: 'About me', href: '#about_me', isRoute: false },
-          { name: 'Technologies', href: '#technologies', isRoute: false },
-          { name: 'Contact', href: '#contact', isRoute: false }
-        ]
+        { name: 'About me', href: '#about_me', isRoute: false },
+        { name: 'Technologies', href: '#technologies', isRoute: false },
+        { name: 'Contact', href: '#contact', isRoute: false }
+      ]
       : []),
-    { name: 'Projects', href: '/projects', isRoute: true }
+    { name: 'Projects', href: '/projects', isRoute: true },
+    { name: 'Login', href: '/login', isRoute: true }
   ];
 
   function classNames(...classes) {
