@@ -12,6 +12,8 @@ import SiteManagerHome from './pages/site_manager/Home.jsx';
 import SiteManagerSettings from './pages/site_manager/Settings.jsx';
 import MatuReadyHome from './pages/matu_ready/Home.jsx';
 import MatuReadyTest from './pages/matu_ready/Test.jsx';
+import MatuReadyPytaniaJawne from './pages/matu_ready/Pytania_Jawne.jsx';
+import MatuReadyPisemna from './pages/matu_ready/Pisemna.jsx';
 import './App.css';
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
         {/* Sekcja serwisu MatuReady */}
         <Route path="/matu_ready" element={<MatuReadyLayout />}>
           <Route index element={<MatuReadyHome />} />
+          <Route path="pytania_jawne" element={<MatuReadyPytaniaJawne />} />
+          <Route path="pisemna" element={<MatuReadyPisemna />} />
           <Route path="test" element={<MatuReadyTest />} />
           {/* Dodaj kolejne podstrony MatuReady tutaj */}
         </Route>
