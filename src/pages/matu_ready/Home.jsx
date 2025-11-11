@@ -1,8 +1,53 @@
-const MatuReadyHome = () => (
-    <div>
-        <h2 className="text-2xl font-bold mb-4">MatuReady - Strona główna</h2>
-        <p>To jest przykładowa strona główna serwisu MatuReady.</p>
-    </div>
-);
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+
+const exams = [
+    {
+        title: "Matura ustna",
+        description: "Przygotowanie do matury ustnej z języka polskiego.",
+        link: "/matu_ready/pytania_jawne",
+    },
+    {
+        title: "Matura pisemna",
+        description: "Przygotowanie do matury pisemnej z języka polskiego.",
+        link: "/matu_ready/pisemna",
+    },
+    // Możesz dodać kolejne typy egzaminów tutaj
+];
+
+const MatuReadyHome = () => {
+    useEffect(() => {
+        document.title = "MatuReady - Wybierz typ matury";
+    }, []);
+
+    return (
+        <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center">
+            <div className="w-full flex flex-col items-center justify-center flex-1 py-12">
+                <h1 className="text-4xl font-bold mb-10 text-center text-gray-100">
+                    Wybierz typ matury
+                </h1>
+                <div className="w-full max-w-3xl flex justify-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center w-full">
+                        {exams.map((exam, idx) => (
+                            <Link
+                                to={exam.link}
+                                key={idx}
+                                className="bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-shadow p-8 flex flex-col items-center text-center border border-gray-700 hover:border-blue-400 w-full max-w-xs"
+                            >
+                                <div className="text-2xl font-semibold mb-4 text-blue-400">
+                                    {exam.title}
+                                </div>
+                                <div className="text-gray-300 mb-6">{exam.description}</div>
+                                <span className="mt-auto inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                                    Przejdź
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
 
 export default MatuReadyHome;
